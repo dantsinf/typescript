@@ -1,0 +1,5 @@
+para instalar o typescript: npm install -g typescript
+
+ver erros: tsc index.ts --watch
+
+obs: se necessário remova o index.js no vscode
