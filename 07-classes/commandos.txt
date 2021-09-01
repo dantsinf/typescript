@@ -1,0 +1,2 @@
+comandos usados: tst --watch
+nodemon: npm install -g nodemon
