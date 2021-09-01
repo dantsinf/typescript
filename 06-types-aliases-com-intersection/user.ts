@@ -13,3 +13,23 @@ const account: AccountInfo = {
   id: 123,
   name: "Willian"
 }
+type CharInfo = {
+  nickname: string;
+  level: number;
+}
+
+const char: CharInfo = {
+  nickname: "Willjusten",
+  level: 100,
+};
+
+//Intersection
+//juntou os dois então tens que informar todos os argumentos
+type PlayerInfo = AccountInfo & CharInfo;
+
+const player: PlayerInfo = {
+  name: "Willian",
+  nickname: "Willjusten",
+  id: 123,
+  level: 100,
+}
