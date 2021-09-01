@@ -1,5 +1,5 @@
-## TYPES
+## Classes
 
-### Como criar os types e como funciona
+### Como funciona classes
 
 ### Tela: a mesma tela do arquivo anterior/criando-config
