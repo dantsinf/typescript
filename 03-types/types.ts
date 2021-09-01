@@ -49,3 +49,9 @@ type Bla = string | undefined;
 function error(): never {
   throw new Error("error");
 }
+
+//objetc
+let cart: object;
+cart = {
+  key: "fi",
+};
