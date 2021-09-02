@@ -14,10 +14,10 @@ type DLCT = {
 }
 
 //intersection 
-type GameCollection = Game & DLCT;
+//type GameCollection = Game & DLCT;
 
 //implements
-class CreateGameT implements GameCollection {}
+//""class CreateGameT implements GameCollection {}
 
 //declarar função
 type getSimilarsT = (title: string) => void;
@@ -35,8 +35,8 @@ type TupleT = [number, number];
 [1,2] as TupleT;
 
 //Apenas uma declaração por escopo
-type JQueryT = { a: string };
-type JQueryT = { b: string };
+//type JQueryT = { a: string };
+//type JQueryT = { b: string };
 
 //mais remomentadado:
 //na maioria das vezes 
@@ -60,14 +60,14 @@ interface DLC {
 interface GameCollection extends Game, DLC {}
 
 //implements
-class CreateGame implements GameCollection {}
+//class CreateGame implements GameCollection {}
 
 //declarar função
 interface getSimilars {
   (title: string): void;
 }
 // ################# diferenças 
-interface ID extends number {}
+//interface ID extends number {}
 
 interface Tuple {
   0: number;

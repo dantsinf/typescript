@@ -5,15 +5,19 @@ T => Type
 k => Key
 V => Value
 E =>  Element
+
+a letra pode ser o que tu quiser ela é só uma referência
 */
 //isso é um generic, props e state pode ser qualquer coisa que definirmos
 //React.FC<Props, State>
 //generic nos hooks
 function useState() {
     var state;
+    //mostra
     function getState() {
         return state;
     }
+    //informa novo estado
     function setState(newState) {
         state = newState;
     }

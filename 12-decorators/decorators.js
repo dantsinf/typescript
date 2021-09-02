@@ -1,3 +1,4 @@
+"use strict";
 /*
 @Component
 @Selector
@@ -10,7 +11,6 @@ Parameter decorator
 Acessor decorator
 */
 //decorator é uma função que recebe parametros por default e retorna
-
 //Factory
 /*
 function Logger(prefix: string){
@@ -21,7 +21,6 @@ function Logger(prefix: string){
 @Logger("awesome")
 class Foo {}
 */
-
 //############ Class Decorator
 /*
 function setAPIVersion(apiVersion: string) {
@@ -32,13 +31,10 @@ function setAPIVersion(apiVersion: string) {
   }
 }
 */
-
 // decorator - anotar a versão da API
 //@setAPIVersion("1.0.0")
 //class API {}
-
 //console.log(new API());
-
 //Property decorator
 /*
 function minLenght(lenght: number){
@@ -56,7 +52,6 @@ function minLenght(lenght: number){
     }
   };
 }*/
-
 /*
 class Movie {
   //validação - se for menor que 5 - error
@@ -67,23 +62,17 @@ class Movie {
   }
 
 }*/
-
 //const movie = new Movie ("Interstellar");
 //console.log(movie.title);
-
 //Method decorator
-
-class Greeter{
-  greeting: string;
-
-  constructor(g: string){
-    this.greeting = g
-  }
-
-  greet() {
-    console.log(`Ola! ${this.greeting}`)
-  }
-}
-
-const pessoinha = new Greeter("Pessoinha");
+var Greeter = /** @class */ (function () {
+    function Greeter(g) {
+        this.greeting = g;
+    }
+    Greeter.prototype.greet = function () {
+        console.log("Ola! " + this.greeting);
+    };
+    return Greeter;
+}());
+var pessoinha = new Greeter("Pessoinha");
 pessoinha.greet();
