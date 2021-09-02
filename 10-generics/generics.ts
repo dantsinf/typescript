@@ -4,6 +4,8 @@ T => Type
 k => Key
 V => Value
 E =>  Element
+
+a letra pode ser o que tu quiser ela é só uma referência
 */
 
 //muito usado nos Hooks e uma variedade de bibliotecas
@@ -17,10 +19,12 @@ type numOrStr = number | string;
 function useState<S extends numOrStr = string>(){
   let state: S;
 
+  //mostra
   function getState(){
      return state;
   }
 
+  //informa novo estado
   function setState(newState: S){
     state = newState;
   }
