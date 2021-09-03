@@ -1,16 +1,19 @@
 import React from 'react';
 import './App.css';
+import Calculo from './Calculo';
+import Filter from './Filter';
 import Input from './Input';
 
 const App = () => {
   const [altura, setAltura] = React.useState(null);
   const [peso, setPeso] = React.useState(null);
-  const calc = peso / (altura * altura);
+  const [calc, setCalc] = React.useState(null);
+  //const calc = peso / (altura * altura);
 
   return (
     <div className="App">
       <h1>IMC</h1>
-      {/*
+      {/* aquando era sem componente input
              <label htmlFor="">
         <input
           type="text"
@@ -46,7 +49,10 @@ const App = () => {
         setValue={setPeso}
       />
       {/*toFixed para contar as casas decimais*/}
-      <p>{peso && altura ? calc.toFixed(1) : ''}</p>
+      {/*<p>{peso && altura ? calc.toFixed(1) : ''}</p>*/}
+      {/*enviando dados para o componente calculo*/}
+      <Calculo p={peso} a={altura} />
+      <Filter />
     </div>
   );
 };
