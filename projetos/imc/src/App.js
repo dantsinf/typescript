@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Input from './Input';
 
 const App = () => {
   const [altura, setAltura] = React.useState(null);
@@ -9,7 +10,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>IMC</h1>
-      <label htmlFor="">
+      {/*
+             <label htmlFor="">
         <input
           type="text"
           id="peso"
@@ -27,9 +29,24 @@ const App = () => {
           value={altura}
           onChange={(a) => setAltura(a.target.value)}
         />
-        {/*toFixed para contar as casas decimais*/}
-        <p>{peso && altura ? calc.toFixed(1) : ''}</p>
-      </label>
+        </label>
+        */}
+      <Input
+        id="altura"
+        label="Altura"
+        type="number"
+        value={altura}
+        setValue={setAltura}
+      />
+      <Input
+        id="peso"
+        label="Peso"
+        type="number"
+        value={peso}
+        setValue={setPeso}
+      />
+      {/*toFixed para contar as casas decimais*/}
+      <p>{peso && altura ? calc.toFixed(1) : ''}</p>
     </div>
   );
 };
