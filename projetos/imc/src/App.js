@@ -28,7 +28,7 @@ const App = () => {
           onChange={(a) => setAltura(a.target.value)}
         />
         {/*toFixed para contar as casas decimais*/}
-        <p>{calc.toFixed(1)}</p>
+        <p>{peso && altura ? calc.toFixed(1) : ''}</p>
       </label>
     </div>
   );
