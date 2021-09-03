@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 
 const App = () => {
-  const [altura, setAltura] = React.useState();
-  const [peso, setPeso] = React.useState();
-  const [calc, setCalc] = React.useState();
+  const [altura, setAltura] = React.useState(null);
+  const [peso, setPeso] = React.useState(null);
+  const calc = peso / (altura * altura);
 
   return (
     <div className="App">
@@ -27,8 +27,8 @@ const App = () => {
           value={altura}
           onChange={(a) => setAltura(a.target.value)}
         />
-
-        <p>{peso / (altura * altura)}</p>
+        {/*toFixed para contar as casas decimais*/}
+        <p>{calc.toFixed(1)}</p>
       </label>
     </div>
   );
