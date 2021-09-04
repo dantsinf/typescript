@@ -1,0 +1,9 @@
+.Footer {
+  position: relative;
+}
+
+p {
+  position: absolute;
+  bottom: 0;
+  color: #737373;
+}

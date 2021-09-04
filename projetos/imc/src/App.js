@@ -4,6 +4,7 @@ import Calculo from './Calculo';
 import Filter from './Validacao';
 import Input from './Input';
 import Validacao from './Validacao';
+import Footer from './Footer';
 
 const App = () => {
   const [altura, setAltura] = React.useState('Digite a altura');
@@ -48,6 +49,7 @@ const App = () => {
       {/*enviando dados para o componente calculo*/}
       <Calculo p={peso} a={altura} />
       <Validacao p={peso} a={altura} />
+      <Footer />
     </div>
   );
 };
