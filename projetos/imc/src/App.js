@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import Calculo from './Calculo';
-import Filter from './Filter';
+import Filter from './Validacao';
 import Input from './Input';
+import Validacao from './Validacao';
 
 const App = () => {
-  const [altura, setAltura] = React.useState(null);
-  const [peso, setPeso] = React.useState(null);
+  const [altura, setAltura] = React.useState('Digite a altura');
+  const [peso, setPeso] = React.useState('Digite o peso');
   const [calc, setCalc] = React.useState(null);
-  //const calc = peso / (altura * altura);
+  //const calc = pe / (a * a);
 
   return (
     <div className="App">
@@ -34,25 +35,13 @@ const App = () => {
         />
         </label>
         */}
-      <Input
-        id="altura"
-        label="Altura"
-        type="number"
-        value={altura}
-        setValue={setAltura}
-      />
-      <Input
-        id="peso"
-        label="Peso"
-        type="number"
-        value={peso}
-        setValue={setPeso}
-      />
+      <Input id="altura" label="Altura" value={altura} setValue={setAltura} />
+      <Input id="peso" label="Peso" value={peso} setValue={setPeso} />
       {/*toFixed para contar as casas decimais*/}
       {/*<p>{peso && altura ? calc.toFixed(1) : ''}</p>*/}
       {/*enviando dados para o componente calculo*/}
       <Calculo p={peso} a={altura} />
-      <Filter />
+      <Validacao p={peso} a={altura} />
     </div>
   );
 };
