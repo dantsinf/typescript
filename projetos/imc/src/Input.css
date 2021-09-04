@@ -1,0 +1,10 @@
+input[type='text'] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -35,8 +35,14 @@ const App = () => {
         />
         </label>
         */}
-      <Input id="altura" label="Altura" value={altura} setValue={setAltura} />
-      <Input id="peso" label="Peso" value={peso} setValue={setPeso} />
+      <form action="">
+        <label htmlFor="">Altura</label>
+        <Input id="altura" label="Altura" value={altura} setValue={setAltura} />
+
+        <label htmlFor="">Peso</label>
+        <Input id="peso" label="Peso" value={peso} setValue={setPeso} />
+      </form>
+
       {/*toFixed para contar as casas decimais*/}
       {/*<p>{peso && altura ? calc.toFixed(1) : ''}</p>*/}
       {/*enviando dados para o componente calculo*/}
