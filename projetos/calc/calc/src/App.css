@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.claro {
+  background: #61dafb;
+}
 
 .App-logo {
   height: 40vmin;

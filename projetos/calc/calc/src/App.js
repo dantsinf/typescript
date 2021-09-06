@@ -1,10 +1,11 @@
+/*eslint no-eval: "error"*/
 import React from 'react';
 
 const App = () => {
   const [resultado, setResultado] = React.useState('');
 
   const handleClick = (e) => {
-    setResultado(resultado.concat(e.target.value));
+    setResultado(resultado.concat(e.target.name));
   };
 
   const limpa = () => {
@@ -12,7 +13,16 @@ const App = () => {
   };
 
   const espaco = () => {
-    setResultado(resultado.slice(0, -1));
+    setResultado(resultado.slice(0, resultado.length - 1)); // ou -1
+  };
+
+  const calcula = () => {
+    try {
+      //setResultado(this.eval(resultado).toSring());
+      setResultado(eval(resultado));
+    } catch (err) {
+      setResultado('Error');
+    }
   };
 
   return (
@@ -23,13 +33,13 @@ const App = () => {
         </form>
 
         <div className="botoes">
-          <button onClick={limpa} id="limpa">
+          <button className="claro" onClick={limpa} id="limpa">
             Limpar
           </button>
-          <button onClick={espaco} id="espaco">
+          <button className="claro" onClick={espaco} id="espaco">
             C
           </button>
-          <button name="/" onClick={handleClick}>
+          <button className="claro" name="/" onClick={handleClick}>
             &divide;
           </button>
           <button name="7" onClick={handleClick}>
@@ -41,7 +51,7 @@ const App = () => {
           <button name="9" onClick={handleClick}>
             9
           </button>
-          <button name="*" onClick={handleClick}>
+          <button className="claro" name="*" onClick={handleClick}>
             &times;
           </button>
           <button name="4" onClick={handleClick}>
@@ -53,7 +63,7 @@ const App = () => {
           <button name="6" onClick={handleClick}>
             6
           </button>
-          <button name="-" onClick={handleClick}>
+          <button className="claro" name="-" onClick={handleClick}>
             &ndash;
           </button>
           <button name="1" onClick={handleClick}>
@@ -65,16 +75,19 @@ const App = () => {
           <button name="3" onClick={handleClick}>
             3
           </button>
-          <button name="+" onClick={handleClick}>
+          <button className="claro" name="+" onClick={handleClick}>
             +
           </button>
           <button name="0" onClick={handleClick}>
             0
           </button>
-          <button name="*" onClick={handleClick}>
+          <button className="claro" name="*" onClick={handleClick}>
             .
           </button>
-          <button onClick={handleClick}>=</button>
+          <button onClick={calcula} id="resultado">
+            =
+          </button>
+          <p>{resultado}</p>
         </div>
       </div>
     </>
