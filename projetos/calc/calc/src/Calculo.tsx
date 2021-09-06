@@ -1,13 +1,21 @@
 import React from 'react';
 
-interface CaclculoProps {
+type Filter = {
   number1: Number;
   number2: Number;
 }
+/*
+function soma(number1: number, number2: number) {
+  const result = number1+number2;
+  console.log(result);
+}*/
+const Calculo: React.FC<Filter> = ({ number1, number2 }) => {
 
-const Calculo: React.FC<CaclculoProps> = ({ number1 }) => {
+  const soma = () => {;
+  }
+
   return <div>
-    <p>{number1}</p>
+    {number2}
   </div>;
 };
 
