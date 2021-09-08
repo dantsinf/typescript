@@ -15,16 +15,21 @@ console.log(name.value, password.value );
 
 function App() {
   return (
-      <form action="wrap" onSubmit={evt => { sendForm(evt) }} >
+      <form  action="wrap" onSubmit={evt => { sendForm(evt) }} >
+        <div className="container">
         <fieldset>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nome</label>
           <input type="text" id="name" />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="password">Password:</label>
+
+          <label htmlFor="password">Senha:</label>
           <input type="text" id="password" />
         </fieldset>
-        <button type="submit" >Login</button>
+        </div>
+
+        <div className="container">
+           <button type="submit" >Entrar</button>
+        </div>
+        
       </form>
   );
 }
