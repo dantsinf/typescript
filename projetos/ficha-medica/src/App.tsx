@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import Listas from './Listas';
+import AddToListas from './AddToListas';
 //import Listas from "./componentes/Listas";
 
 interface IState {
@@ -40,6 +41,7 @@ function App() {
     <div className="App">
       <h1>Lista de pacientes</h1>
       <Listas pessoas={pessoas}/>
+      <AddToListas/>
     </div>
   );
 }
