@@ -1,47 +1,40 @@
-import './App.css';
 import React, { useState } from 'react';
-import Listas from './Listas';
-import AddToListas from './AddToListas';
-//import Listas from "./componentes/Listas";
+import './App.css';
+import List from './List';
+import AddToList from './AddToList';
 
-interface IState {
-  pessoas: {
-      nome: string
-      idade: number
-      url: string
-      descricao?: string
+export interface IState {
+  people: {
+      name: string
+      age: number
+      img: string
+      note?: string
   }[]
 }
 
+
 function App() {
 
-  /*const [pessoas, stPessoas] = useState([
+  const [people, setPeople] = useState<IState["people"]>([
     {
       name: "João Moura",
-      url: "",
-      idade: 19,
-      descricao: "Ansioso para começar em um novo time"
+      age: 35,
+      img: "https://reliablery.com/images/profile/1613964753_1_Justin%20Sylvester%201.jpg",
+      note: "Com ansiedade",
     },
     {
       name: "Silva da Rosa",
-      url: "",
-      idade: 20
+      age: 20,
+      img: "https://4.bp.blogspot.com/-u5L1pAaS5AU/WeeQpNMt16I/AAAAAAAAKGU/xbXkIOVZDtUDngqnOtrvYIL4nejAxWq9gCEwYBhgL/s1600/shay-mitchell.jpg",
+      note: "Dor nas costas",
     }
-  ]);*/
-  const [pessoas, setPessoas] = useState<IState["pessoas"]>([
-    {
-      nome: "João Moura",
-      url: "",
-      idade: 19,
-      descricao: "Quebrou a perna"
-    }    
   ])
 
   return (
     <div className="App">
       <h1>Lista de pacientes</h1>
-      <Listas pessoas={pessoas}/>
-      <AddToListas/>
+      <List people={people}/>
+      <AddToList setPeople={setPeople} people={people}/>
     </div>
   );
 }
