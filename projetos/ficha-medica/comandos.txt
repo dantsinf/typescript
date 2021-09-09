@@ -1,0 +1,2 @@
+criado com:
+npx create-react-app ficha-medica --template typescript react-with-typescript
