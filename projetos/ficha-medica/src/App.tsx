@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import Listas from './Listas';
 //import Listas from "./componentes/Listas";
 
 interface IState {
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de pacientes</h1>
-      <Listas />
+      <Listas pessoas={pessoas}/>
     </div>
   );
 }
