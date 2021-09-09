@@ -27,7 +27,14 @@ function App() {
       idade: 20
     }
   ]);*/
-  const [pessoas, setPessoas] = useState<IState["pessoas"]>([])
+  const [pessoas, setPessoas] = useState<IState["pessoas"]>([
+    {
+      nome: "João Moura",
+      url: "",
+      idade: 19,
+      descricao: "Quebrou a perna"
+    }    
+  ])
 
   return (
     <div className="App">
