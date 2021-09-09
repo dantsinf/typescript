@@ -9,7 +9,7 @@ interface IProps {
   }[]
 }
 
-const Listas = (props: IProps) => {
+const Listas: React.FC<IProps> = ({ pessoas }) => {
   return (
     <div>
       <p>Aqui uma lista</p>
