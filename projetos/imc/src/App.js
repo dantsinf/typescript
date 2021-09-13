@@ -128,7 +128,26 @@ const App = () => {
   return (
     <div className="App">
       <h1>IMC</h1>
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1934/1934400.png"
+        width="300"
+        height="250"
+      />
       <form action="">
+        <label class="container">
+          Masculino
+          <input
+            type="radio"
+            id="masculino"
+            value="genero"
+            name="genero"
+            checked
+          />
+        </label>
+        <label class="container">
+          Feminino
+          <input type="radio" id="feminino" value="genero" name="genero" />
+        </label>
         <Input
           type="text"
           name="altura"
