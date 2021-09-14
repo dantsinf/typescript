@@ -1,0 +1,4 @@
+comandos usados: tst --watch
+testa erros: tst --watch
+nodemon: npm install -g nodemon
+para compilar o código com o nodemon: nodemon classes.js

@@ -1,0 +1,16 @@
+------------------------------------------- 01 primeiro codigo
+
+para instalar o typescript: npm install -g typescript
+
+ver erros/compilar: tsc index.ts --watch
+
+obs: se necessário remova o index.js no vscode
+
+------------------------------------------- 02 criando e config tsconfig
+
+para definir regras de pastas ou do typescript
+comando: tsc --init
+que vai criar: tsconfig.json
+cada coisa dentro do arquivo faz parte de uma propriedade, regras typescript
+compilar comando: ts
+
