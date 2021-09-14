@@ -1,54 +1,172 @@
-import React from 'react';
-import './App.css';
-import Calculo from './Calculo';
-import Filter from './Validacao';
-import Input from './Input';
-import Validacao from './Validacao';
-import Footer from './Footer';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+// import Calculo from "./Calculo";
+// import Filter from "./Validacao";
+import Input from "./Input";
+// import Validacao from "./Validacao";
+import Footer from "./Footer";
+
+const INITIAL_IMC_STATE = {
+  peso: {
+    value: "",
+    error: false,
+  },
+  altura: {
+    value: "",
+    error: false,
+  },
+  imc: 0,
+  description: "",
+  isValid: false,
+};
+
+const ENUM_TEXT = {
+  BAIXO: "Abaixo do peso",
+  MEDIO: "Peso normal",
+  ALTO: "Sobrepeso (acima do peso desejado)",
+  MUITO_ALTO: "Obesidade",
+};
 
 const App = () => {
-  const [altura, setAltura] = React.useState('Digite a altura');
-  const [peso, setPeso] = React.useState('Digite o peso');
-  const [calc, setCalc] = React.useState(null);
-  //const calc = pe / (a * a);
+  const [{ peso, altura, imc, description, isValid }, setImcState] =
+    useState(INITIAL_IMC_STATE);
+
+  const handleChangePeso = ({ target }) => {
+    if (target.value > 0) {
+      setImcState(prevState => ({
+        ...prevState,
+        peso: {
+          value: target.value,
+          error: false,
+        },
+      }));
+    } else {
+      setImcState(prevState => ({
+        ...prevState,
+        peso: {
+          value: target.value,
+          error: true,
+        },
+      }));
+    }
+  };
+
+  const handleChangeAltura = ({ target }) => {
+    if (target.value > 0) {
+      setImcState(prevState => ({
+        ...prevState,
+        altura: {
+          value: target.value,
+          error: false,
+        },
+      }));
+    } else {
+      setImcState(prevState => ({
+        ...prevState,
+        altura: {
+          value: target.value,
+          error: true,
+        },
+      }));
+    }
+  };
+
+  const handleCalculate = () => {
+    let calc = peso.value / (altura.value * altura.value);
+    if (calc <= 0) {
+      setImcState(prevState => ({ ...prevState, isValid: false }));
+      return;
+    }
+
+    if (calc < 18.5) {
+      setImcState(prevState => ({
+        ...prevState,
+        imc: calc,
+        description: ENUM_TEXT.BAIXO,
+        isValid: true,
+      }));
+      return;
+    }
+
+    if (calc >= 18.5 && calc <= 24.9) {
+      setImcState(prevState => ({
+        ...prevState,
+        imc: calc,
+        description: ENUM_TEXT.MEDIO,
+        isValid: true,
+      }));
+      return;
+    }
+
+    if (calc > 24.9 && calc < 30) {
+      setImcState(prevState => ({
+        ...prevState,
+        imc: calc,
+        description: ENUM_TEXT.ALTO,
+        isValid: true,
+      }));
+      return;
+    }
+
+    if (calc > 30) {
+      setImcState(prevState => ({
+        ...prevState,
+        imc: calc,
+        description: ENUM_TEXT.MUITO_ALTO,
+        isValid: true,
+      }));
+      return;
+    }
+  };
+
+  useEffect(() => {
+    if (!peso.error && !altura.error) {
+      handleCalculate();
+    }
+  }, [peso, altura]);
 
   return (
     <div className="App">
       <h1>IMC</h1>
-      {/* aquando era sem componente input
-             <label htmlFor="">
-        <input
-          type="text"
-          id="peso"
-          placeholder="Digite o peso"
-          value={peso}
-          onChange={(p) => setPeso(p.target.value)}
-        />
-      </label>
-
-      <label htmlFor="">
-        <input
-          type="text"
-          id="altura"
-          placeholder="Digite o altura"
-          value={altura}
-          onChange={(a) => setAltura(a.target.value)}
-        />
-        </label>
-        */}
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1934/1934400.png"
+        width="300"
+        height="250"
+      />
       <form action="">
-        <label htmlFor="">Altura</label>
-        <Input id="altura" label="Altura" value={altura} setValue={setAltura} />
-
-        <label htmlFor="">Peso</label>
-        <Input id="peso" label="Peso" value={peso} setValue={setPeso} />
+        <label class="container">
+          Masculino
+          <input
+            type="radio"
+            id="masculino"
+            value="genero"
+            name="genero"
+            checked
+          />
+        </label>
+        <label class="container">
+          Feminino
+          <input type="radio" id="feminino" value="genero" name="genero" />
+        </label>
+        <Input
+          type="text"
+          name="altura"
+          label="Altura"
+          value={altura.value}
+          onChange={handleChangeAltura}
+          error={altura.error}
+        />
+        <Input
+          type="text"
+          name="peso"
+          label="Peso"
+          value={peso.value}
+          onChange={handleChangePeso}
+          error={peso.error}
+        />
       </form>
-
-      {/*toFixed para contar as casas decimais*/}
-      {/*<p>{peso && altura ? calc.toFixed(1) : ''}</p>*/}
-      {/*enviando dados para o componente calculo*/}
-      <Calculo p={peso} a={altura} />
-      <Validacao p={peso} a={altura} />
+      {isValid && <h3>{imc.toFixed(1)}</h3>}
+      {isValid && <h3>{description}</h3>}
       <Footer />
     </div>
   );

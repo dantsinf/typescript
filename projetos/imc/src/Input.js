@@ -1,15 +1,12 @@
-import React from 'react';
-import './Input.css';
+import React from "react";
+import "./Input.css";
 
-const Input = ({ id, setValue }) => {
+const Input = ({ error, label, name, ...rest }) => {
   return (
-    <div>
-      <input
-        type="text"
-        id={id}
-        name={id}
-        onChange={({ target }) => setValue(target.value)}
-      />
+    <div className="inputGroup">
+      <label htmlFor={name}>{label}</label>
+      <input className={error ? "danger" : "success"} name={name} {...rest} />
+      {error && <span>O valor deve ser maior que Zero</span>}
     </div>
   );
 };

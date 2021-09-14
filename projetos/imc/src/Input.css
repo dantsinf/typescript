@@ -1,3 +1,18 @@
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.danger, .danger:focus {
+  border: solid 2px #900;
+}
+
+.success, .success:focus {
+  border: solid 2px green;
+}
+
 input[type='text'] {
   width: 25%;
   padding: 12px 20px;
