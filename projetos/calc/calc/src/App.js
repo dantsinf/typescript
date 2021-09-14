@@ -1,5 +1,5 @@
-/*eslint no-eval: "error"*/
 import React from 'react';
+/*eslint-disable no-eval */
 
 const App = () => {
   const [resultado, setResultado] = React.useState('');
@@ -19,7 +19,7 @@ const App = () => {
   const calcula = () => {
     try {
       //setResultado(this.eval(resultado).toSring());
-      setResultado(eval(resultado));
+      setResultado(eval(resultado).toSring());
     } catch (err) {
       setResultado('Error');
     }

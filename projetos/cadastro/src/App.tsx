@@ -2,28 +2,39 @@
 import './App.css';
 import React, { useState } from 'react';
 
+interface IState {
+  pessoas{
+      nome: string
+      idade: number
+      url: string
+      descricao?: string
+  }[]
+}
+
 function App() {
 
-  const [number, setNumber] = useState<number>(5);
+  /*const [pessoas, stPessoas] = useState([
+    {
+      name: "João Moura",
+      url: "",
+      idade: 19,
+      descricao: "Ansioso para começar em um novo time"
+    },
+    {
+      name: "Silva da Rosa",
+      url: "",
+      idade: 20
+    }
+  ]);*/
+  const [pessoas, setPessoas] = useState<IState["pessoa"]>([])
 
-  const changeNumber = () => {
-    setNumber(10)
-  }
+  pessoas.map(pessoa => {
+    pessoa.nome
+  })
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );

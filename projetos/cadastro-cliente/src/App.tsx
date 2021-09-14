@@ -37,20 +37,20 @@ const App: FC = () => {
         <div className="inputContainer">
           <input
             type="text"
-            placeholder="Task..."
+            placeholder="Nome"
             name="task"
             value={task}
             onChange={handleChange}
           />
           <input
             type="number"
-            placeholder="Deadline (in Days)..."
+            placeholder="Idade"
             name="deadline"
             value={deadline}
             onChange={handleChange}
           />
         </div>
-        <button onClick={addTask}>Add Task</button>
+        <button onClick={addTask}>Enviar</button>
       </div>
       <div className="todoList">
         {todoList.map((task: ITask, key: number) => {

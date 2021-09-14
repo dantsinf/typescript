@@ -9,16 +9,12 @@ function App() {
   const [mult, setMult] = React.useState();
   */
   const [n1, setN1] = React.useState(0);
-
   const [n2, setN2] = React.useState(0);
   const [result, setResult] = React.useState(0);
   let numero1 = parseInt(n1);
-  let numero2 = parseInt(n2) ? parseInt(n2) : 'Errado';
-  //let numero2 = !parseInt(n2) ? 'Digite outro valor' : !parseInt(n2);
-  //let soma = 0;
+  let numero2 = parseInt(n2);
+  //let numero2 = parseInt(n2) ? parseInt(n2) : ' Digite um valor numérico';
   //let soma = numero1 + numero2;
-
-  //const soma = parseInt(n1 + n2);
 
   return (
     <div className="App">

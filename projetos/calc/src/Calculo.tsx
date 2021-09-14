@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Calculo = (soma) => {
+
+
+const Calculo = () => {
   return <div></div>;
 };
 
