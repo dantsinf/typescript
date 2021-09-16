@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
+import Header from './Header';
+//import Header from './Header';
 /*eslint-disable no-eval */
 
 const App = () => {
-  const [resultado, setResultado] = React.useState();
   const [b, setB] = React.useState();
   const [h, setH] = React.useState();
 
