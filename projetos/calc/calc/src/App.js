@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 /*eslint-disable no-eval */
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <>
+      <Header />
       <div className="container">
         <input
           type="text"
@@ -27,8 +29,7 @@ const App = () => {
           onChange={(h) => setH(parseInt(h.target.value))}
         />
         {/* impede valor NaN na tela */}
-        <p>{isNaN(Calcular()) ? '' : Calcular()}</p>
-        <p>{toString(b) ? 'ok' : 'false'}</p>
+        <p>{isNaN(Calcular()) ? '' : <p>A={Calcular()}</p>}</p>
       </div>
     </>
   );
