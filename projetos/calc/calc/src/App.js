@@ -1,39 +1,34 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 /*eslint-disable no-eval */
 
 const App = () => {
   const [resultado, setResultado] = React.useState();
-  const [n1, setN1] = React.useState();
-  const [n2, setN2] = React.useState();
+  const [b, setB] = React.useState();
+  const [h, setH] = React.useState();
 
-  /*const Calcular = () => {
-    return setResultado(val.target.value);
-  };*/
+  const Calcular = () => {
+    return (b * h) / 2;
+  };
 
   return (
     <>
       <div className="container">
         <input
           type="text"
-          name="n1"
-          onChange={np => setN1(parseInt(np.target.value))}
+          name="b"
+          placeholder="base/b"
+          onChange={(b) => setB(parseInt(b.target.value))}
         />
         <input
           type="text"
-          name="n2"
-          onChange={ns => setN2(parseInt(ns.target.value))}
+          name="h"
+          placeholder="altura/h"
+          onChange={(h) => setH(parseInt(h.target.value))}
         />
-        <button
-          value="+"
-          name="+"
-          onClick={val => setResultado(val.target.value)}
-        >
-          +
-        </button>
-        <p>{n1}</p>
-        <p>{n2}</p>
-        <p>{resultado}</p>
+        {/* impede valor NaN na tela */}
+        <p>{isNaN(Calcular()) ? '' : Calcular()}</p>
+        <p>{toString(b) ? 'ok' : 'false'}</p>
       </div>
     </>
   );
