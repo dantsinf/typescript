@@ -127,9 +127,9 @@ const App = () => {
   }, [peso, altura]);
 
   const radioChange = (event) => {
-    const target1 = event.target;
+    const target = event.target;
     const name = event.name;
-    const value = target1.value;
+    const value = target.value;
     alert(`${name} ${value}`);
   };
 
@@ -146,16 +146,19 @@ const App = () => {
           Masculino
           <input
             type="radio"
-            id="masculino"
             value="masculino"
             name="genero"
-            checked
             onChange={radioChange}
           />
         </label>
         <label class="container">
           Feminino
-          <input type="radio" id="feminino" value="genero" name="genero" />
+          <input
+            type="radio"
+            value="feminino"
+            name="genero"
+            onChange={radioChange}
+          />
         </label>
         <Input
           type="text"
@@ -176,6 +179,7 @@ const App = () => {
       </form>
       {isValid && <h3>{imc.toFixed(1)}</h3>}
       {isValid && <h3>{description}</h3>}
+      <p>{radioChange}</p>
       <Footer />
     </div>
   );
