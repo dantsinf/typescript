@@ -1,39 +1,40 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState, useEffect, Component } from 'react';
+import './App.css';
 // import Calculo from "./Calculo";
 // import Filter from "./Validacao";
-import Input from "./Input";
+import Input from './Input';
 // import Validacao from "./Validacao";
-import Footer from "./Footer";
+import Footer from './Footer';
 
 const INITIAL_IMC_STATE = {
   peso: {
-    value: "",
+    value: '',
     error: false,
   },
   altura: {
-    value: "",
+    value: '',
     error: false,
   },
   imc: 0,
-  description: "",
+  description: '',
   isValid: false,
 };
 
 const ENUM_TEXT = {
-  BAIXO: "Abaixo do peso",
-  MEDIO: "Peso normal",
-  ALTO: "Sobrepeso (acima do peso desejado)",
-  MUITO_ALTO: "Obesidade",
+  BAIXO: 'Abaixo do peso',
+  MEDIO: 'Peso normal',
+  ALTO: 'Sobrepeso (acima do peso desejado)',
+  MUITO_ALTO: 'Obesidade',
 };
 
 const App = () => {
   const [{ peso, altura, imc, description, isValid }, setImcState] =
     useState(INITIAL_IMC_STATE);
+  //const [genero, setGenero] = React.useState();
 
   const handleChangePeso = ({ target }) => {
     if (target.value > 0) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         peso: {
           value: target.value,
@@ -41,7 +42,7 @@ const App = () => {
         },
       }));
     } else {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         peso: {
           value: target.value,
@@ -53,7 +54,7 @@ const App = () => {
 
   const handleChangeAltura = ({ target }) => {
     if (target.value > 0) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         altura: {
           value: target.value,
@@ -61,7 +62,7 @@ const App = () => {
         },
       }));
     } else {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         altura: {
           value: target.value,
@@ -74,12 +75,12 @@ const App = () => {
   const handleCalculate = () => {
     let calc = peso.value / (altura.value * altura.value);
     if (calc <= 0) {
-      setImcState(prevState => ({ ...prevState, isValid: false }));
+      setImcState((prevState) => ({ ...prevState, isValid: false }));
       return;
     }
 
     if (calc < 18.5) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         imc: calc,
         description: ENUM_TEXT.BAIXO,
@@ -89,7 +90,7 @@ const App = () => {
     }
 
     if (calc >= 18.5 && calc <= 24.9) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         imc: calc,
         description: ENUM_TEXT.MEDIO,
@@ -99,7 +100,7 @@ const App = () => {
     }
 
     if (calc > 24.9 && calc < 30) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         imc: calc,
         description: ENUM_TEXT.ALTO,
@@ -109,7 +110,7 @@ const App = () => {
     }
 
     if (calc > 30) {
-      setImcState(prevState => ({
+      setImcState((prevState) => ({
         ...prevState,
         imc: calc,
         description: ENUM_TEXT.MUITO_ALTO,
@@ -125,6 +126,13 @@ const App = () => {
     }
   }, [peso, altura]);
 
+  const radioChange = (event) => {
+    const target1 = event.target;
+    const name = event.name;
+    const value = target1.value;
+    alert(`${name} ${value}`);
+  };
+
   return (
     <div className="App">
       <h1>IMC</h1>
@@ -139,9 +147,10 @@ const App = () => {
           <input
             type="radio"
             id="masculino"
-            value="genero"
+            value="masculino"
             name="genero"
             checked
+            onChange={radioChange}
           />
         </label>
         <label class="container">
