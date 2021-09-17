@@ -9,6 +9,7 @@ function App() {
   const [cont, setCont] = React.useState<number[]>([]);
   const [min, setMin] = React.useState<number>(0);
   const [max, setMax] = React.useState<number>(0);
+  const [umresult, setUmresult] = React.useState<number>(0);
   /*const mostra = cont.map((e, i) => (
     <p key={i}>{e}</p>
   ));*/
@@ -42,13 +43,16 @@ function App() {
             onChange={a => setMax(parseInt(a.target.value))}
           />
           <button
-            onClick={() =>
-              setCont([...cont, Math.floor(Math.random() * max) + min])
+            onClick={(a) =>
+              //array de números aleatórios, para usar remova teste
+              //setCont([...cont, Math.floor(Math.random() * max) + min])
+             setUmresult(Math.floor(Math.random() * max) + min)
             }
           >
             Sortear
           </button>
-          <p>{Resultado(0, 0)}</p>
+          {/*<p>{Resultado(0, 0)}</p>*/}
+          <h3>{umresult}</h3>
         </div>
       </div>
     </>
