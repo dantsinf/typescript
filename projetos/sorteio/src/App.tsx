@@ -26,7 +26,7 @@ function App() {
         {/*<input type="number" placeholder="Escreva o valor máximo" value={max} onChange={(m) => setMax(m.target.value)}/>*/}
         {/*onChange={(a) => setA(parseInt(a.target.value))}*/}
         <div className="campo">
-          <span>Entre</span>
+          <span>Máximo</span>
           <input
             className="campo-numero"
             type="text"
@@ -34,7 +34,7 @@ function App() {
             placeholder="Min"
             onChange={i => setMin(parseInt(i.target.value))}
           />
-          <span>e</span>
+          <span>mínimo</span>
           <input
             className="campo-numero"
             type="text"
@@ -44,7 +44,7 @@ function App() {
           />
           <button
             onClick={(a) =>
-              //array de números aleatórios, para usar remova teste
+              //array de números aleatórios, para usar remova umresult
               //setCont([...cont, Math.floor(Math.random() * max) + min])
              setUmresult(Math.floor(Math.random() * max) + min)
             }
@@ -52,7 +52,9 @@ function App() {
             Sortear
           </button>
           {/*<p>{Resultado(0, 0)}</p>*/}
-          <h3>{umresult}</h3>
+          {/*filtro de string*/}
+          {/*<h3 className="erros">{isNaN(umresult) ? <p>Digite um valor numérico</p> : umresult}</h3> */}
+          <h3 className="erros">{umresult == 0 ? "" : umresult}</h3> 
         </div>
       </div>
     </>
