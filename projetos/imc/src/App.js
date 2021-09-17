@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 // import Calculo from "./Calculo";
 // import Filter from "./Validacao";
@@ -30,7 +30,6 @@ const ENUM_TEXT = {
 const App = () => {
   const [{ peso, altura, imc, description, isValid }, setImcState] =
     useState(INITIAL_IMC_STATE);
-  //const [genero, setGenero] = React.useState();
 
   const handleChangePeso = ({ target }) => {
     if (target.value > 0) {
@@ -126,11 +125,14 @@ const App = () => {
     }
   }, [peso, altura]);
 
+  //const [genero, setGenero] = React.useState();
+
   const radioChange = (event) => {
     const target = event.target;
     const name = event.name;
     const value = target.value;
-    alert(`${name} ${value}`);
+    alert(`Gênero:${value}`);
+    //console.log(`${value}`);
   };
 
   return (
@@ -162,6 +164,7 @@ const App = () => {
         </label>
         <Input
           type="text"
+          id="altura"
           name="altura"
           label="Altura"
           value={altura.value}
@@ -171,6 +174,7 @@ const App = () => {
         <Input
           type="text"
           name="peso"
+          id="peso"
           label="Peso"
           value={peso.value}
           onChange={handleChangePeso}
@@ -179,7 +183,6 @@ const App = () => {
       </form>
       {isValid && <h3>{imc.toFixed(1)}</h3>}
       {isValid && <h3>{description}</h3>}
-      <p>{radioChange}</p>
       <Footer />
     </div>
   );
