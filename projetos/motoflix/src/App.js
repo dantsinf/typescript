@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Tmdb from './Tmdb';
 import './App.css';
+import MovieRow from './components/MovieRow';
 
 const App = () => {
   const [movieList, setMovieList] = useState([]);
@@ -19,7 +20,7 @@ const App = () => {
     <div className="page">
       <section className="lists">
         {movieList.map((item, key) => (
-          <div>{item.title}</div>
+          <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
     </div>
