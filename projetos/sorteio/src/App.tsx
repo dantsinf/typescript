@@ -54,7 +54,7 @@ function App() {
           {/*<p>{Resultado(0, 0)}</p>*/}
           {/*filtro de string*/}
           {/*<h3 className="erros">{isNaN(umresult) ? <p>Digite um valor numérico</p> : umresult}</h3> */}
-          <h3 className="erros">{umresult == 0 ? "" : umresult}</h3> 
+          <h3 className="erros">{umresult == 0 ? "" : <h2>{umresult}</h2> }</h3> 
         </div>
       </div>
     </>

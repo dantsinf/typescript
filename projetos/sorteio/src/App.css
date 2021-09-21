@@ -37,3 +37,9 @@ p {
   margin-left: -59px;
   font-size: 0.9rem;
 }
+
+h2 {
+  font-size: 2rem;
+  background-color: gray;
+  width: 10%;
+}
