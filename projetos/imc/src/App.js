@@ -181,8 +181,10 @@ const App = () => {
           error={peso.error}
         />
       </form>
-      {isValid && <h3>{imc.toFixed(1)}</h3>}
-      {isValid && <h3>{description}</h3>}
+      <div className="result">
+        {isValid && <h3>{imc.toFixed(1)}</h3>}
+        {isValid && <h3>{description}</h3>}
+      </div>
       <Footer />
     </div>
   );

@@ -8,3 +8,7 @@ body {
   background-color: #f2f2f2;
   color: black;
 }
+
+.result {
+  background-color: aqua;
+}
