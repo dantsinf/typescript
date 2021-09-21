@@ -1,7 +1,8 @@
 import React from 'react';
+import './App.css';
 
 const App = () => {
-  return <div>Começo</div>;
+  return <h1>Começo</h1>;
 };
 
 export default App;
