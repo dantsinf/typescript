@@ -10,7 +10,16 @@
   overflow-x: hidden;
 }
 
+.movieRow--list {
+  width: 99999999px;
+}
+
 .movieRow--item {
   /*um item ao lado do outro*/
   display: inline-block;
+  width: 150px;
+}
+
+.movieRow--item img {
+  width: 100%;
 }
