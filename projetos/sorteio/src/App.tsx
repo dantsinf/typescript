@@ -26,7 +26,7 @@ function App() {
         {/*<input type="number" placeholder="Escreva o valor máximo" value={max} onChange={(m) => setMax(m.target.value)}/>*/}
         {/*onChange={(a) => setA(parseInt(a.target.value))}*/}
         <div className="campo">
-          <span>Máximo</span>
+          <span>Minimo</span>
           <input
             className="campo-numero"
             type="text"
@@ -34,7 +34,7 @@ function App() {
             placeholder="Min"
             onChange={i => setMin(parseInt(i.target.value))}
           />
-          <span>mínimo</span>
+          <span>máximo</span>
           <input
             className="campo-numero"
             type="text"
