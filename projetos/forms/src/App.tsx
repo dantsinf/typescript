@@ -7,10 +7,10 @@ const sendForm = async (event: FormEvent<HTMLFormElement>) => {
 
 const { name, password } = event.target as typeof event.target & {
   name: {value: string}
-  password: {value: string}
+  password: {value: number}
 }
 console.log(name.value, password.value );
-
+alert('Nome: ' + name.value + '\nSenha: ' + password.value)
 }
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <input type="text" id="name" />
 
           <label htmlFor="password">Senha:</label>
-          <input type="text" id="password" />
+          <input type="password" id="password" />
         </fieldset>
         </div>
 
