@@ -11,7 +11,7 @@ const { name, password } = event.target as typeof event.target & {
 }
 console.log(name.value, password.value );
 alert('Nome: ' + name.value + '\nSenha: ' + password.value)
-window.location.href = "https://www.google.com/";
+window.location.href = "http://dontpad.com/0te$te";
 }
 
 function App() {
