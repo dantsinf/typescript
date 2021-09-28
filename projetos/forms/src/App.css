@@ -10,6 +10,7 @@ input[type='password'] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  margin-left: 10px;
 }
 
 button {
