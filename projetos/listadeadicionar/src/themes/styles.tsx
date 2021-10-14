@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeType } from './theme';
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>` 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
   *{
     margin: 0;
@@ -9,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body{
-    background-color: ;
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
 `
