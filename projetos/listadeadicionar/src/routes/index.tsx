@@ -1,16 +1,18 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { App } from '../App';//1 ponto a mais para sair da pasta
 
-const Routes = () => {
+export const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" />
-        <App/>
+        <Route path="/">
+          <App/>
+        </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>    
       </Switch>
   </BrowserRouter>
   )
 }
-
-export default Routes
