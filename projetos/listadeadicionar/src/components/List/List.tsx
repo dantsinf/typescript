@@ -7,7 +7,7 @@ type ListProps = {
 };
 export const List: React.FC<ListProps> = ({ items }) => {
   return (
-    <Column>
+    <Column py="10px" >
       {items.map((item, index) => (
         <ListItem key={index} {...item} />
       ))}
