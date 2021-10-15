@@ -1,11 +1,12 @@
 import { type } from "os";
 import styled from "styled-components";
-import { layout, LayoutProps } from "styled-system";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
-type ColumnProps = LayoutProps
+type ColumnProps = LayoutProps & SpaceProps;
 
 export const Column = styled.div<ColumnProps>`
   display: flex;
   flex-direction: column;
   ${layout}
+  ${space}
 `;

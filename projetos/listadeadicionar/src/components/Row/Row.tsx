@@ -1,6 +1,11 @@
+import { type } from "os";
 import styled from "styled-components";
+import { layout, LayoutProps } from "styled-system";
 
-export const Row = styled.div`
+type RowProps = LayoutProps;
+
+export const Row = styled.div<RowProps>`
   display: flex;
   flex-direction: row;
+  ${layout}
 `;

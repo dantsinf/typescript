@@ -1,6 +1,10 @@
+import { type } from "os";
 import styled from "styled-components";
+import { flex, FlexProps } from "styled-system";
 
-export const Input = styled.input`
+type InputProps = FlexProps
+
+export const Input = styled.input<InputProps>`
   background-color: transparent;
   padding: 10px;
   
@@ -9,4 +13,5 @@ export const Input = styled.input`
   &::placeholder {
     color: rgba(255, 255, 255, 0.2);
   }
+  ${flex}
 `;
