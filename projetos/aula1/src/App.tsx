@@ -9,7 +9,7 @@ function App() {
   //1. toda a variável que foi criada aqui, foi criada no typescript com nome da type Form
   const [nome, setNome] = React.useState('');
   const [idade, setIdade] = React.useState(parseInt(''))
-  const [cormuda, setCormuda] = React.useState('#993300');
+  //const [cormuda, setCormuda] = React.useState('#993300');
 
   const handleChangeNome = (event: any) => { //o event pode ter qualquer nome e any pois ele precisa receber uma tipagem
       setNome(event.target.value) 
