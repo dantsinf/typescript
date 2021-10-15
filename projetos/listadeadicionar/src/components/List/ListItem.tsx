@@ -1,7 +1,7 @@
 import React from 'react'
 import { Column, Text } from 'components';
 
-type ListItemProps = {
+export type ListItemProps = {
   label: string;
 }
 
