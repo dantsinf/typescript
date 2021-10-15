@@ -1,4 +1,4 @@
-
+//1.2 toda variável criada no App, foi criada aqui também
 type Form = {
   nome: string;
   idade: number;
