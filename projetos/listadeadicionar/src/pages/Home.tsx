@@ -1,10 +1,14 @@
 import React from 'react'
-import { Text } from 'components';
+import { Input, Text, Button, Row, Column } from 'components';
 
  export const Home = () => {
   return (
-    <div>
+    <Column width="600px">
       <Text fontWeight="bold">Tasks</Text>
-    </div>
+      <Row>
+      <Input placeholder="Digite um nome aqui..." />
+      <Button>OK</Button>
+      </Row>
+    </Column>
   )
 } 
