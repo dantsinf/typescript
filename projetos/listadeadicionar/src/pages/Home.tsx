@@ -1,9 +1,10 @@
 import React from 'react'
+import { Text } from 'components';
 
  export const Home = () => {
   return (
     <div>
-      <p>Home</p>
+      <Text fontWeight="bold">Tasks</Text>
     </div>
   )
 } 
