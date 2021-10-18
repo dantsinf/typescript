@@ -9,7 +9,13 @@ const App = () => {
           <C.HeaderText>Sistema Finaceiro</C.HeaderText>
         </C.Header>
         <C.Body>
-          ...
+          
+          {/* ÀREA DE INFORMAÇÕES */}
+
+          {/* ÀREA DE INSERÇÃO */}
+
+          {/* TABELA DE ITENS */}
+
         </C.Body>
       </C.Container>
     </div>
