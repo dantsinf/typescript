@@ -9,6 +9,8 @@ import { items } from './data/items';
 const App = () => {
 
   const [list, setList] = useState(items);
+  //const [list, setList] = useState<Item[]>(items); //se fosse necessário tipar aqui
+  const [currentMonth, setCurrentMonth] = useState();
 
   return (
     <div>
