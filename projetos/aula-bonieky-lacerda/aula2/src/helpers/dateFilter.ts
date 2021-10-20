@@ -58,5 +58,5 @@ export const FormatCurrentMonth = (currentMonth: string): string => {
     "Dezembro",
   ];
 
-  return `${months[parseInt(month) - 1]} ${year}`;
+  return `${months[parseInt(month) - 1]}  de ${year}`;
 };
