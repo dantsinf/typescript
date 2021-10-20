@@ -3,7 +3,7 @@ import * as C from './styles'
 const InfoArea = () => {
   return (
     <C.Container>
-
+      InfoArea
     </C.Container>
   )
 }
