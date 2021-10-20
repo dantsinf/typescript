@@ -3,7 +3,11 @@ import * as C from './styles'
 const InfoArea = () => {
   return (
     <C.Container>
-      InfoArea
+      <C.MonthArea>
+        <C.MonthArrow></C.MonthArrow>
+      </C.MonthArea>
+      <C.ResumeArea>
+      </C.ResumeArea>  
     </C.Container>
   )
 }
