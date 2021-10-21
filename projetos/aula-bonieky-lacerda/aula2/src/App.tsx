@@ -27,8 +27,13 @@ const App = () => {
     for(let i in filteredList) {
       if(categories[filteredList[i].category].expense){
         expense += filteredList[i].value;
+      } else {
+        expense += filteredList[i].value;
       }
     }
+
+    setIncome(income);
+    setExpense(expense);
 
   },[filteredList])
 
