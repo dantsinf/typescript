@@ -2,6 +2,6 @@
 
 ### Sistema de Finanças Pessoais
 
-### Typescipt e ReactJS
+### ReactJS e TypeScript, feito com lib styled-components
 
 ### aula: https://youtu.be/_hytKpMc04E

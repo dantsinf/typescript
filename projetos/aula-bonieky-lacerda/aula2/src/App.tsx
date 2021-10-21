@@ -8,6 +8,7 @@ import { items } from "./data/items";
 import { getCurrentMonth, filterListByMonth } from "./helpers/dateFilter";
 import { TableArea } from "./componets/TableArea";
 import InfoArea from "./componets/InfoArea";
+import  InputArea  from "./componets/InputArea";
 const App = () => {
   const [list, setList] = useState(items);
   //const [list, setList] = useState<Item[]>(items); //se fosse necessário tipar aqui
@@ -49,9 +50,10 @@ const App = () => {
         </C.Header>
         <C.Body>
           {/* ÀREA DE INFORMAÇÕES */}
+          <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} expense={expense} income={income} />          
 
           {/* ÀREA DE INSERÇÃO */}
-          <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} expense={expense} income={income} />
+          <InputArea/>
 
           {/* TABELA DE ITENS */}
           <TableArea list={filteredList} />
