@@ -42,6 +42,12 @@ const App = () => {
     setCurrentMonth(newMonth);
   }
 
+  const handleAddItem = (item: Item) => {
+    let newList = [...list];
+    newList.push(item);
+    setList(newList);
+  };
+
   return (
     <div>
       <C.Container>
@@ -53,7 +59,7 @@ const App = () => {
           <InfoArea currentMonth={currentMonth} onMonthChange={handleMonthChange} expense={expense} income={income} />          
 
           {/* ÀREA DE INSERÇÃO */}
-          <InputArea/>
+          <InputArea onAdd={handleAddItem} />
 
           {/* TABELA DE ITENS */}
           <TableArea list={filteredList} />
