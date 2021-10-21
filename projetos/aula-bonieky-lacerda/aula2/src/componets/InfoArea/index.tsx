@@ -1,6 +1,8 @@
 import React from "react";
 import * as C from "./styles";
 import { FormatCurrentMonth } from "../../helpers/dateFilter";
+import  ResumeItem  from '../ResumeItem'
+
 type Props = {
   currentMonth: string;
   onMonthChange: (newMonth: string) => void;
@@ -30,7 +32,11 @@ const InfoArea = ({ currentMonth, onMonthChange, income,expense }: Props) => {
         <C.MonthTitle>{FormatCurrentMonth(currentMonth)}</C.MonthTitle>
         <C.MonthArrow onClick={handleNextMonth}>➡</C.MonthArrow>
       </C.MonthArea>
-      <C.ResumeArea></C.ResumeArea>
+      <C.ResumeArea>
+        <ResumeItem title="Receita" value={income} />
+        <ResumeItem title="Despensa" value={expense} />
+        <ResumeItem title="Balanço" value={income - expense} />
+      </C.ResumeArea>
     </C.Container>
   );
 };
