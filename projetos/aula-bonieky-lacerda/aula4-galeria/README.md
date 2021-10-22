@@ -1,7 +1,7 @@
-# Aula 3
+# Aula 4
 
-### Sistema de Finanças Pessoais
+### Galeria de Fotos em React (com Typescript e Firebase)
 
-### ReactJS e TypeScript, feito com lib styled-components
+### ReactJS e TypeScript, Firebase
 
-### aula: https://youtu.be/_hytKpMc04E
+### aula: https://youtu.be/ss4BXa-WfgI
