@@ -1,9 +1,13 @@
- 
+import { useState, useEffect } from 'react'; 
 import './App.css';
 import * as C from './App.styles';
+import * as Photos from './services/photos';
 
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="App">
       <C.Container>
