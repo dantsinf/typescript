@@ -27,6 +27,22 @@ function App() {
           <C.Header>Galeria de Fotos</C.Header>
           {/* Área de upload */}
           {/* Lista de fotos */}
+          {loading &&
+            <C.ScreenWarning>
+              <div className="emoji">🖐</div>
+              <div>Carregando...</div>
+            </C.ScreenWarning>
+          }
+
+          {!loading && photos.length>0 &&
+            <C.PhotoList>
+              {photos.map((item, index)=>(
+                <div>{item.name}</div>
+              ))}
+            </C.PhotoList>
+
+          }
+
         </C.Area>
       </C.Container>
     </div>

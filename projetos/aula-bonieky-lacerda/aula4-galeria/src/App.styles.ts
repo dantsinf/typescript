@@ -18,3 +18,15 @@ export const Area = styled.div`
   max-width: 980px;
   padding: 30px 0;
 `;
+
+export const ScreenWarning = styled.div`
+  text-align: center;
+  .emoji{
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+`;
+
+export const PhotoList = styled.div`
+  display: grid;
+`;
